@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <p></p>
+    <div class="border"></div>
+
+    <!-- Navigation Bar on top of the webpage -->
+    <div class="navigationBar">
+      <a href="iAM@firstHWForcSCI_571.html" style="text-decoration: none"
+        >Home</a
+      >
+      <a href="explore.html" style="text-decoration: none">Explore</a>
+      <a href="contacts.html" style="text-decoration: none">Contacts</a>
+    </div>
+    <!-- ################################################################# -->
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <!-- Section 1 : Banner image and text -->
+    <div class="bannerImageForHome">
+      <div class="bannerTextForHome">
+        LA - The City of Angels
+      </div>
+    </div>
+    <!-- ################################################################# -->
+
+    <!-- Section 2 : Row of cards with image and text with data fetched from data.json -->
+    <div class="center">
+      <section id="section2" class="cards"></section>
+    </div>
+    <!-- ################################################################# -->
+
+    <!-- Section 3: Paragraph followed by image in single row -->
+    <div class="section-color">
+      <div id="section3" class="center">
+        <!-- static implementation: commented/not used. JS implementation below used. -->
+        <!-- <p style="margin-left:225px;margin-right:225px;text-align:justify;color:white;font-family: Comfortaa Montserrat, sans-serif;line-height: 1.75;">
+					<img src="./images/lasky.png" style="width:400px;height:300px;margin-left:20px;float: right">
+					Los Angeles is the City of Dreams and is the heart of southern California. It is a vast and varied geographic entity. The city is famous  for being the home of the rich and famous, Hollywood, the main home of major entertainment companies, ethnically diverse, and the second-largest city in America.
+					<br><br>
+					The residents of Los Angeles are called Angelenos. Their lifestyle relies on the automobile, idealizes the single-family dwelling, and favours informality. With notable exceptions, the skyline is primarily horizontal rather than vertical. Los Angeles is a place of extraordinary ethnic and racial diversity, owing largely to immigration. It is a must visit place and a beautiful vacation desination.
+				</p> -->
+      </div>
+    </div>
+    <!-- ################################################################# -->
+
+    <!-- Section 4: Paragraphs with images in multiple rows with data fetched from data.json -->
+    <div id="section4" class="center">
+      <!-- static implementation: commented/not used. JS implementation below used.-->
+      <!-- <p style="margin-left:225px;margin-right:225px;text-align:justify;color:white;font-family: Comfortaa Montserrat, sans-serif;line-height: 1.5;">
+    			<img src="./images/hollywood.jpg" style="width:375px;height:275px;margin-right:20px;float: left;">
+    			<span style="font-size: 25px;font-weight:bold;">Hollywood</span><br><br>
+    			No trip to Los Angeles is complete without a visit to Hollywood, the home of movie studios, many of LA's most popular and historic tourist destinations, and its world-famous namesake boulevard. A larger-than-life symbol of the entertainment business, Hollywood beckons tourists with landmarks like TCL Chinese Theatre and star-studded Walk of Fame. Many tourists come to Hollywood to see all of these things. Because of the importance of Hollywood in the movie industry of the United States, the whole industry is often called "Hollywood", even though not all movies are made in Hollywood.
+    		</p>
+    		<br><br><br>
+    		<p style="margin-left:225px;margin-right:225px;text-align:justify;color:white;font-family: Comfortaa Montserrat, sans-serif;line-height: 1.5;">
+    			<img src="./images/beach.jpg" style="width:375px;height:275px;margin-left:20px;float: right;">
+    			<span style="font-size: 25px;font-weight:bold;float: right;">Beaches</span><br><br>
+    			One of the biggest draws of the Los Angeles area is the beach scene (especially when you've had enough of the traffic). Los Angeles may possibly be the American city with the best overall variety of local beaches. There are a wide range of beaches within the large confines of Los Angeles County, and the county also neighbors miles and miles of other beach cities, spreading both north and south of LA. Families may enjoy large beaches like Santa Monica or Redondo Beach, with a wide range of facilities, retail areas, and amenities, while adventurers may like more secluded beaches like those found in Malibu or Palos Verdes.
+    		</p> -->
+    </div>
+    <!-- ################################################################# -->
+
+    <!-- Section5: Footer with a quote on left and developers contact information -->
+    <div class="section-color">
+      <div class="center1">
+        <div class="center2">
+          <div class="section5-quote">
+            Tip the world over on its side and everything loose will land
+            <br />in Los Angeles.<br /><br />
+            - Frank Lloyd Wright
+          </div>
+          <div class="section5-design">
+            Designed By
+          </div>
+          <div class="section5-devname">
+            Laxmi Garde
+          </div>
+          <a href="mailto:lgarde@usc.edu">
+            <div class="section5-mail">
+              lgarde@usc.edu
+            </div>
+          </a>
+          <a href="tel:(+1) 213-573-3158">
+            <div class="section5-phone">
+              (+1) 213-573-3158
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- ################################################################# -->
+
+    <!-- JS implementation -->
+    <script>
+      fetch(
+        "https://laxmigarde.github.io/HW1/data.json"
+      ) /* todo : change as per the deployed URL */
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          appendDataInCards(data);
+          appendPara(data);
+          appendData(data);
+        })
+        .catch(function(err) {
+          console.log("error: " + err);
+        });
+
+      // add data from json to card , create a map for locations
+      //Section 2 : Row of cards with image and text with data fetched from data.json
+      function appendDataInCards(data) {
+        var mainContainer = document.getElementById("section2");
+        var map = new Map();
+        map.set(0, "Griffith Observatory");
+        map.set(1, "Mountains");
+        map.set(2, "Universal Studios");
+        for (var i = 0; i < data.section2.length; i++) {
+          var img = document.createElement("img");
+          img.className = "card-image";
+          img.src = data.section2[i].image;
+          img.innerHTML = img.src;
+
+          var title = document.createElement("p");
+          title.className = "card-content";
+          title.innerHTML = map.get(i);
+
+          var div = document.createElement("div");
+          div.className = "card";
+          div.innerHTML = null;
+
+          var div1 = document.createElement("div");
+          div1.innerHTML = data.section2[i].text;
+
+          div.appendChild(img);
+          div.appendChild(title);
+          div.appendChild(div1);
+          mainContainer.appendChild(div);
+        }
+      }
+
+      // add paragraph with image in a single row
+      // Section 3: Paragraph followed by image in single row
+      function appendPara(data) {
+        var mainContainer = document.getElementById("section3");
+        var image = document.createElement("img");
+        image.src = "lasky.png";
+        image.className = "section3-image";
+        image.innerHTML = image.src;
+
+        var div = document.createElement("p");
+        div.className = "section3-p";
+        div.innerHTML = data.section3.text[0];
+
+        var div1 = document.createElement("p");
+        div1.className = "section3-p";
+        div1.innerHTML = data.section3.text[1];
+
+        mainContainer.appendChild(image);
+        mainContainer.appendChild(div);
+        mainContainer.appendChild(div1);
+      }
+
+      // add data and image in rows with data fetched from data.json
+      // Section 4: Paragraphs with images in multiple rows with data fetched from data.json
+      function appendData(data) {
+        var mainContainer = document.getElementById("section4");
+
+        // Hollywood
+        var div = document.createElement("div");
+        div.className = "section4-span-hollywood";
+        div.innerHTML = data.section4[0].heading;
+
+        var para = document.createElement("p");
+        para.className = "section4-p-hollywood";
+        para.innerHTML = data.section4[0].text;
+
+        var img = document.createElement("img");
+        img.className = "section4-image-hollywood";
+        img.src = data.section4[0].image;
+        img.innerHTML = img.src;
+
+        mainContainer.appendChild(div);
+        mainContainer.appendChild(img);
+        mainContainer.appendChild(para);
+
+        // Beaches
+        var div1 = document.createElement("div");
+        div1.className = "section4-span-beaches";
+        div1.innerHTML = data.section4[1].heading;
+
+        var para1 = document.createElement("p");
+        para1.className = "section4-p-beaches";
+        para1.innerHTML = data.section4[1].text;
+
+        var img1 = document.createElement("img");
+        img1.className = "section4-image-beaches";
+        img1.src = data.section4[1].image;
+        img1.innerHTML = img1.src;
+
+        mainContainer.appendChild(div1);
+        mainContainer.appendChild(img1);
+        mainContainer.appendChild(para1);
+      }
+    </script>
+    <!-- ################################################################# -->
+  </body>
+</html>

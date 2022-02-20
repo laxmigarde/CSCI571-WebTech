@@ -1,0 +1,275 @@
+/* Commons */
+/* Header tab */
+body {
+  background-color: #262626;
+  text-align: center;
+  margin: 0px;
+}
+a:link {
+  color: #fff1e6;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: Montserrat, sans-serif;
+}
+a:visited {
+  color: #fff1e6;
+  text-decoration: none;
+}
+a:hover {
+  color: #ff6633;
+  text-shadow: 2px 2px #f2f2f2;
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+/* for alternate background color */
+.section-color {
+  background-color: #1a1a1a;
+  min-width: 1440px;
+}
+/* Navigation Bar on top of the webpage */
+.navigationBar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: black;
+  word-spacing: 120px;
+  text-shadow: 2px 2px #ff6633;
+  background-color: #262626;
+  white-space: nowrap;
+  min-width: 1440px;
+}
+.center {
+  padding: 170px 0;
+  min-width: 1440px;
+}
+.center1 {
+  padding: 150px 150px;
+}
+.center2 {
+  min-width: 1118px;
+}
+.border {
+  border-top: solid;
+  border-top-color: #99006b;
+  border-top-width: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+}
+
+/* ============================================== */
+/** Section 1 Banner image and text **/
+.bannerImageForHome {
+  background-image: url("rodeo-drive.jpg");
+  height: 500px;
+  background-size: 100% 100%;
+  /*background-size: cover;*/
+  background-position: center;
+  background-repeat: no-repeat;
+  min-width: 1440px;
+}
+
+.bannerTextForHome {
+  position: center;
+  color: #ff6633;
+  text-shadow: 1.5px 1.5px #f2f2f2;
+  font-size: 35px;
+  font-family: Montserrat, sans-serif;
+  padding: 330px;
+  white-space: nowrap;
+}
+
+/* ============================================== */
+/* Section 2 : Row of cards with image and text */
+.cards {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  padding-left: 250px;
+  padding-right: 250px;
+}
+.card {
+  background: #1a1a1a;
+  padding: 15px;
+  margin-left: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  text-align: left;
+  color: white;
+  font-size: 15px;
+  line-height: 25px;
+}
+.card-image {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+}
+.card-content {
+  font-size: 18px;
+  text-align: left;
+}
+.card {
+  flex: 0 1 12%;
+}
+
+/* ============================================== */
+/* Section 3 : Paragraph followed by Image in single row */
+.section3-image {
+  width: 470px;
+  height: 320px;
+  margin-right: 200px;
+  float: right;
+  padding: 15px;
+}
+.section3-p {
+  margin-left: 250px;
+  margin-right: 250px;
+  text-align: justify;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.5;
+}
+
+/* ============================================== */
+/* Section 4 : Paragraphs with images in multiple rows with data fetched from data.json */
+.section4-image-hollywood {
+  width: 395px;
+  height: 275px;
+  margin-right: 20px;
+  margin-left: 250px;
+  float: left;
+}
+.section4-image-beaches {
+  width: 395px;
+  height: 275px;
+  margin-left: 20px;
+  margin-right: 200px;
+  float: right;
+}
+
+.section4-p-hollywood {
+  margin-left: 225px;
+  margin-right: 200px;
+  text-align: justify;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.5;
+  padding: 20px;
+  font-size: 15px;
+}
+.section4-p-beaches {
+  margin-left: 250px;
+  margin-right: 200px;
+  text-align: justify;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.section4-span-hollywood {
+  font-size: 20px;
+  float: right;
+  margin-right: 668px;
+  line-height: 3;
+  color: white;
+  font-family: Montserrat, sans-serif;
+}
+.section4-span-beaches {
+  font-size: 20px;
+  float: left;
+  line-height: 3;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  margin-left: 735px;
+}
+
+/* ============================================== */
+/* Section5: Footer with a quote on left and developers contact information */
+.section5-quote {
+  font-size: 16px;
+  color: white;
+  float: left;
+  margin-left: 120px;
+  margin-top: -25px;
+  font-family: Montserrat, sans-serif;
+}
+.section5-design {
+  font-size: 20px;
+  float: right;
+  margin-right: 190px;
+  margin-top: -70px;
+  font-family: Montserrat, sans-serif;
+  color: white;
+}
+.section5-devname {
+  font-size: 18px;
+  float: right;
+  margin-right: 197px;
+  margin-top: -15px;
+  font-family: Montserrat, sans-serif;
+  color: white;
+}
+.section5-mail {
+  font-size: 15px;
+  color: white;
+  float: right;
+  margin-right: 192px;
+  text-shadow: none;
+  padding-top: 30px;
+}
+.section5-mail:hover {
+  text-decoration-line: underline;
+}
+.section5-phone {
+  font-size: 15px;
+  color: white;
+  float: right;
+  margin-right: -120px;
+  text-shadow: none;
+  margin-top: 50px;
+}
+.section5-phone:hover {
+  text-decoration-line: underline;
+}
+
+/* ============================================== */
+/* 404 image and text for Contacts and Explore pages */
+.bannerImagePageNotFound {
+  background-image: url("404-featured.jpg");
+  height: 400px;
+  background-position: center;
+  min-width: 1440px;
+}
+.bannerImagePageNotFound:before {
+  /*overlay*/
+  content: "";
+  display: block;
+  top: 83px;
+  bottom: 0;
+  left: 0px;
+  right: 0px;
+  height: 401px;
+  background: rgba(250, 140, 50, 0.6);
+}
+.bannerTextPageNotFound {
+  font-family: Montserrat, sans-serif;
+  font-size: 35px;
+  text-align: center;
+  top: 265px;
+  left: 580px;
+  color: #262626;
+  position: absolute;
+  white-space: nowrap;
+}
+.displayMessage {
+  font-family: Montserrat, sans-serif;
+  font-size: 25px;
+  color: #f2f2f2;
+}
