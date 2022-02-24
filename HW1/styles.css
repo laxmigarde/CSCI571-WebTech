@@ -44,9 +44,11 @@ a:active {
 .center {
   padding: 170px 0;
   min-width: 1440px;
+  max-width: 1440px;
 }
 .center1 {
   padding: 150px 150px;
+  max-width: 1440px;
 }
 .center2 {
   min-width: 1118px;
@@ -220,7 +222,7 @@ a:active {
   font-size: 15px;
   color: white;
   float: right;
-  margin-right: 192px;
+  margin-right: -120px;
   text-shadow: none;
   padding-top: 30px;
 }
@@ -247,7 +249,7 @@ a:active {
   background-position: center;
   min-width: 1440px;
 }
-.bannerImagePageNotFound:before {
+.bannerImagePageNotFound1 {
   /*overlay*/
   content: "";
   display: block;
@@ -255,18 +257,19 @@ a:active {
   bottom: 0;
   left: 0px;
   right: 0px;
-  height: 401px;
+  height: 400px;
   background: rgba(250, 140, 50, 0.6);
 }
 .bannerTextPageNotFound {
   font-family: Montserrat, sans-serif;
   font-size: 35px;
   text-align: center;
-  top: 265px;
-  left: 580px;
+  /* top: 265px;
+  left: 580px; */
   color: #262626;
-  position: absolute;
-  white-space: nowrap;
+  /* position: absolute; */
+  /* white-space: nowrap; */
+  padding: 190px;
 }
 .displayMessage {
   font-family: Montserrat, sans-serif;
