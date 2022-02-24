@@ -46,9 +46,13 @@ a:active {
   min-width: 1440px;
   max-width: 1440px;
 }
+.center_error_page {
+  padding: 170px 0;
+  min-width: 1440px;
+}
 .center1 {
   padding: 150px 150px;
-  max-width: 1440px;
+  min-width: 1440px;
 }
 .center2 {
   min-width: 1118px;
